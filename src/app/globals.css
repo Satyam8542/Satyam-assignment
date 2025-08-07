@@ -1,0 +1,264 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+  width: 100%;
+  background-color: white;
+  color: black;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.header-container {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 1.5rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  margin: 0 15px;
+}
+.nav-links {
+  display: flex;
+}
+
+@media (min-width: 768px) {
+  .nav-links {
+    display: flex;
+    gap: 20px;
+    font-size: 15px;
+    font-weight: 600;
+    align-items: center;
+    margin-left: 25px;
+  }
+
+  .nav-links a:hover {
+    color: #2563eb; /* Tailwind blue-600 */
+    text-decoration: underline;
+  }
+}
+
+
+.marg {
+  margin-left: 130px;
+}
+
+.dropbtn {
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.arrow {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+  margin-left: 5px;
+  margin-bottom: 2px;
+}
+
+.down {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #ffffff;
+}
+
+.c-popular-searches {
+  color: #8d93b3;
+  font-size: 14px;
+  padding: 15px 0;
+  position: relative;
+  width: 785px;
+  margin: 0 auto;
+}
+
+.c-popular-searches__item {
+  margin-left: 25px;
+  cursor: pointer;
+  color: #8d93b3;
+  text-decoration: none;
+}
+
+.c-icon-list {
+  overflow: hidden;
+  height: 80px;
+  padding: 17px 0;
+  background-color: #1d2869;
+  text-align: center;
+  margin-top: 10%;
+  margin-left: -50px;
+  width: 1220px;
+}
+
+.c-icon-list__list_wrapper {
+  width: auto;
+  margin: 0 auto;
+  display: inline-block;
+}
+
+.c-icon:not(:last-child) {
+  border-right: 1px solid #4a5387;
+}
+
+.c-icon {
+  float: left;
+  text-align: center;
+  color: #fff;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.tab-icon {
+  font-size: 20px;
+  display: block;
+}
+.tab-offer {
+  display: flex;
+  flex-direction: row;
+}
+
+.icon{
+  margin-left: 45%;
+}
+.icon-1{
+  margin-left: 25%;
+}
+.c-icon__img {
+  transition: transform .2s ease-out;
+}
+
+.icon-ic_chat:before {
+  content: "\E921";
+}
+
+[class*=" icon-ic_"]:before,
+[class^=icon-ic_]:before {
+  font-family: practicon;
+  font-style: normal;
+  font-weight: 400;
+  speak: none;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1em;
+  margin-left: .2em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+element.style {}
+
+.c-icon>span {
+  color: #b8bbd9;
+  font-size: 14px;
+  text-decoration: none;
+  line-height: 28px;
+}
+
+.c-icon>span,
+.u-p-h-30 {
+  padding: 0 30px;
+}
+
+.u-t-white {
+  color: #fff;
+}
+
+.c-button--transparent,
+.c-copyright,
+.c-footer__title,
+.c-package__footer__saving,
+.c-package__header,
+.c-records__records_container,
+.u-t-bold {
+  font-weight: 700;
+}
+
+.c-offer-tag {
+  background-color: #00a500;
+  font-size: 12px;
+  padding: 3px 5px;
+}
+
+.u-border-white {
+  border: 1px solid #fff;
+}
+
+.c-button--transparent,
+.c-package,
+.c-package__footer__saving,
+.u-round-corner {
+  border-radius: 3px;
+}
+
+.log {
+  border: #565656 2px solid;
+  padding: 0 10px;
+  margin-left: 5%;
+}
