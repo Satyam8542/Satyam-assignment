@@ -21,7 +21,7 @@ export default function DoctorsList() {
     <div className="p-6 max-w-5xl mx-auto">
       <h2 className="text-2xl font-semibold mb-4">{doctors.length} Dermatologists available in {location}</h2>
       <div className="grid gap-6">
-        {doctors.map((doc: any) => (
+        {doctors.map((doc: unknown) => (
           <div key={doc._id} className="border p-4 rounded shadow-md flex flex-col md:flex-row justify-between">
             <div>
               <h3 className="text-xl font-bold">{doc.name}</h3>

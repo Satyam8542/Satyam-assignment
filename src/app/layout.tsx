@@ -2,7 +2,8 @@
 import './globals.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
-import Dropdown from '@/components/Dropdown';
+import Image from "next/image";
+import Link from "next/link";
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -19,14 +20,21 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <div className="header-container">
             {/* Left - Logo */}
             <div className="flex items-center gap-2">
-              <img src="/Practologo.png" alt="Logo" className="h-6 w-auto" />
+              <Image
+                src="/Practologo.png"
+                alt="Logo"
+                width={120}         // 👈 adjust to your image size
+                height={24}         // 👈 adjust as needed
+                className="h-6 w-auto"
+              />
+
             </div>
 
             {/* Center - Navigation */}
             <nav className="nav-links">
-              <a href="/" className="hover:text-blue-600">Find Doctors</a>
-              <a href="#" className="hover:text-blue-600">Video Consult</a>
-              <a href="#" className="hover:text-blue-600">Surgeries</a>
+              <Link href="/" className="hover:text-blue-600">Find Doctors</Link>
+              <Link href="#" className="hover:text-blue-600">Video Consult</Link>
+              <Link href="#" className="hover:text-blue-600">Surgeries</Link>
             </nav>
 
             {/* Right - Auth + Dropdown */}
@@ -34,25 +42,25 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <div className="dropdown">
                 <button className="dropbtn">For Corporate<i className="arrow down"></i></button>
                 <div className="dropdown-content">
-                  <a href="#">Home</a>
-                  <a href="#">About</a>
-                  <a href="#">Contact</a>
+                  <Link href="#">Home</Link>
+                  <Link href="#">About</Link>
+                  <Link href="#">Contact</Link>
                 </div>
               </div>
               <div className="dropdown">
                 <button className="dropbtn">For Provider<i className="arrow down"></i></button>
                 <div className="dropdown-content">
-                  <a href="#">Home</a>
-                  <a href="#">About</a>
-                  <a href="#">Contact</a>
+                  <Link href="#">Home</Link>
+                  <Link href="#">About</Link>
+                  <Link href="#">Contact</Link>
                 </div>
               </div>
               <div className="dropdown">
                 <button className="dropbtn">Security & Help<i className="arrow down"></i></button>
                 <div className="dropdown-content">
-                  <a href="#">Home</a>
-                  <a href="#">About</a>
-                  <a href="#">Contact</a>
+                  <Link href="#">Home</Link>
+                  <Link href="#">About</Link>
+                  <Link href="#">Contact</Link>
                 </div>
               </div>
             </div>
