@@ -1,9 +1,11 @@
+"use strict";
+
 import server_1 from "next/server";
 import db_1 from "@/lib/db";
 import Doctor_1 from "@/models/Doctor";
 
 
-"use strict";
+
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {

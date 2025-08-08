@@ -1,10 +1,9 @@
 "use strict";
 
-require("./globals.css");
+import "./globals.css";
+import { Inter } from "next/font/google";
 
-var _google = require("next/font/google");
 
-"use strict";
 
 exports.__esModule = true;
 exports.metadata = void 0; // app/layout.tsx (Refactored layout with separate client Dropdown component)
