@@ -1,3 +1,8 @@
+import server_1 from "next/server";
+import db_1 from "@/lib/db";
+import Doctor_1 from "@/models/Doctor";
+
+
 "use strict";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
@@ -37,9 +42,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 exports.__esModule = true;
 exports.GET = void 0;
-var server_1 = require("next/server");
-var db_1 = require("@/lib/db");
-var Doctor_1 = require("@/models/Doctor");
+
 function GET(req) {
     return __awaiter(this, void 0, void 0, function () {
         var searchParams, location, specialty, doctors, err_1;

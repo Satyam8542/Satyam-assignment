@@ -1,9 +1,11 @@
+import { useRouter } from "next/navigation";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+
 'use client';
 "use strict";
 exports.__esModule = true;
-var navigation_1 = require("next/navigation");
-var react_1 = require("react");
-var axios_1 = require("axios");
+
 function DoctorsList() {
     var searchParams = navigation_1.useSearchParams();
     var location = searchParams.get('location') || '';

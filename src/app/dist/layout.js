@@ -1,9 +1,11 @@
+import "./globals.css";
+import { Inter } from "next/font/google";
+
 "use strict";
 exports.__esModule = true;
 exports.metadata = void 0;
 // app/layout.tsx (Refactored layout with separate client Dropdown component)
-require("./globals.css");
-var google_1 = require("next/font/google");
+
 var inter = google_1.Inter({ subsets: ['latin'] });
 exports.metadata = {
     title: 'Practo Clone',
