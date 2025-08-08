@@ -1,9 +1,10 @@
+'use client';
+"use strict";
+
 import { useRouter } from "next/navigation";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-'use client';
-"use strict";
 exports.__esModule = true;
 
 function DoctorsList() {
