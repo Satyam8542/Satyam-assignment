@@ -6,29 +6,32 @@ if (!MONGODB_URI) {
   throw new Error('Please define the MONGODB_URI environment variable');
 }
 
-// 👇 Extend globalThis with custom mongoose cache type
+// Extend global with mongoose cache
 interface MongooseCache {
   conn: typeof mongoose | null;
   promise: Promise<typeof mongoose> | null;
 }
 
 declare global {
-  // allow global `var` declarations
-  // eslint-disable-next-line no-var
   var mongoose: MongooseCache | undefined;
 }
 
-let cached = global.mongoose;
+// Initialize cached once
+const globalWithMongoose = global as typeof globalThis & { mongoose: MongooseCache };
 
-if (!cached) {
-  cached = global.mongoose = { conn: null, promise: null };
+if (!globalWithMongoose.mongoose) {
+  globalWithMongoose.mongoose = { conn: null, promise: null };
 }
 
 async function dbConnect() {
+  const cached = globalWithMongoose.mongoose!; // now TypeScript knows it's defined
+
   if (cached.conn) return cached.conn;
 
   if (!cached.promise) {
-    cached.promise = mongoose.connect(MONGODB_URI).then((mongoose) => mongoose);
+    cached.promise = mongoose.connect(MONGODB_URI, {
+      bufferCommands: false,
+    });
   }
 
   cached.conn = await cached.promise;
