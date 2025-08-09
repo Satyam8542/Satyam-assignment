@@ -1,10 +1,9 @@
 "use strict";
 
-var _server = _interopRequireDefault(require("next/server"));
+import { NextRequest, NextResponse } from 'next/server';
+import dbConnect from '@/lib/db';
+import Doctor from '@/models/Doctor';
 
-var _db = _interopRequireDefault(require("@/lib/db"));
-
-var _Doctor = _interopRequireDefault(require("@/models/Doctor"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
