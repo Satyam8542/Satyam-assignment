@@ -3,11 +3,23 @@ import { useSearchParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 
+// Define a proper type
+interface Doctor {
+  _id: string;
+  name: string;
+  specialty: string;
+  experience: number;
+  area: string;
+  fee: number;
+  availability: string;
+}
+
 export default function DoctorsList() {
   const searchParams = useSearchParams();
   const location = searchParams.get('location') || '';
   const specialty = searchParams.get('specialty') || '';
-  const [doctors, setDoctors] = useState([]);
+
+  const [doctors, setDoctors] = useState<Doctor[]>([]); // Use Doctor[] type
 
   useEffect(() => {
     if (location && specialty) {
@@ -19,9 +31,11 @@ export default function DoctorsList() {
 
   return (
     <div className="p-6 max-w-5xl mx-auto">
-      <h2 className="text-2xl font-semibold mb-4">{doctors.length} Dermatologists available in {location}</h2>
+      <h2 className="text-2xl font-semibold mb-4">
+        {doctors.length} Dermatologists available in {location}
+      </h2>
       <div className="grid gap-6">
-        {doctors.map((doc: unknown ) => (
+        {doctors.map((doc) => (
           <div key={doc._id} className="border p-4 rounded shadow-md flex flex-col md:flex-row justify-between">
             <div>
               <h3 className="text-xl font-bold">{doc.name}</h3>

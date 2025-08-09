@@ -1,7 +1,10 @@
 "use strict";
-import { NextResponse } from 'next/server';
-import connectDB from '@/lib/db';
-import Doctor from '@/models/Doctor';
+
+var _server = _interopRequireDefault(require("next/server"));
+
+var _db = _interopRequireDefault(require("@/lib/db"));
+
+var _Doctor = _interopRequireDefault(require("@/models/Doctor"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -159,7 +162,7 @@ function GET(req) {
         case 0:
           return [4
           /*yield*/
-          , _db["default"]["default"]()];
+          , db_1["default"]()];
 
         case 1:
           _a.sent();
@@ -174,7 +177,7 @@ function GET(req) {
 
           return [4
           /*yield*/
-          , _Doctor["default"]["default"].find({
+          , Doctor_1["default"].find({
             area: {
               $regex: new RegExp(location, 'i')
             },
